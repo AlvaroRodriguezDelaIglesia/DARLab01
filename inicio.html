@@ -1,10 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Blog — Big Data & IA</title>
+    <meta name="description" content="Blog profesional sobre Big Data e Inteligencia Artificial: tendencias, casos de uso y ética."/>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
+<header class="main-header">
+    <div class="container header-inner">
+        <a href="index.html" class="logo" aria-label="Ir al inicio">Big Data & IA</a>
+        <nav aria-label="Principal">
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="entrada1.html">Big Data</a></li>
+                <li><a href="entrada2.html">Inteligencia Artificial</a></li>
+                <li><a href="entrada3.html">Ética y Futuro</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+<section class="hero container">
+    <div class="hero-content">
+        <h1>Explora el mundo del <span>Big Data</span> y la <span>Inteligencia Artificial</span></h1>
+        <p>Analizamos tendencias, casos reales y el impacto de la IA en la sociedad con una visión clara y profesional.</p>
+
+
+        <div class="search-wrap">
+            <input id="search" type="search" placeholder="Buscar entradas (ej.: datos, ética, modelos)..." aria-label="Buscar entradas"/>
+        </div>
+
+
+        <div class="tags" role="group" aria-label="Filtrar por etiqueta">
+            <button class="tag active" data-tag="all" aria-pressed="true">Todo</button>
+            <button class="tag" data-tag="bigdata">Big Data</button>
+            <button class="tag" data-tag="ia">Inteligencia Artificial</button>
+            <button class="tag" data-tag="etica">Ética</button>
+        </div>
+    </div>
+</section>
+
+<main class="container posts" id="posts">
+
+    <article class="card reveal" data-title="El poder del Big Data en la sociedad moderna" data-tags="bigdata datos analitica">
+        <a href="entrada1.html" class="card-media" aria-label="Abrir: El poder del Big Data en la sociedad moderna">
+            <img
+                    src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=80"
+                    alt="Panel con visualizaciones de datos y gráficos"
+                    loading="eager"
+            />
+        </a>
+        <div class="card-body">
+            <h2 class="card-title"><a href="entrada1.html">El poder del Big Data en la sociedad moderna</a></h2>
+            <p class="card-excerpt">
+                Cómo los datos masivos impulsan decisiones en salud, movilidad y empresas. Beneficios, retos y buenas prácticas.
+            </p>
+            <div class="card-meta">
+                <span class="badge">Big Data</span>
+                <time datetime="2025-11-07">7 nov 2025</time>
+            </div>
+        </div>
+    </article>
+
+
+    <article class="card reveal" data-title="IA en acción: del lenguaje a la visión por computador" data-tags="ia modelos aprendizaje profundo">
+        <a href="entrada2.html" class="card-media" aria-label="Abrir: IA en acción">
+            <img
+                    src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1400&q=80"
+                    alt="Representación abstracta de un cerebro digital con nodos"
+                    loading="lazy"
+            />
+        </a>
+        <div class="card-body">
+            <h2 class="card-title"><a href="entrada2.html">IA en acción: del lenguaje a la visión por computador</a></h2>
+            <p class="card-excerpt">
+                Casos reales de IA transformando industrias: asistentes, automatización, análisis de imagen y más.
+            </p>
+            <div class="card-meta">
+                <span class="badge">IA</span>
+                <time datetime="2025-11-07">7 nov 2025</time>
+            </div>
+        </div>
+    </article>
+
+    <article class="card reveal" data-title="Ética y futuro de la IA: riesgos, sesgos y regulación" data-tags="etica ia regulacion sesgos">
+        <a href="entrada3.html" class="card-media" aria-label="Abrir: Ética y futuro de la IA">
+            <img
+                    src="https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&w=1400&q=80"
+                    alt="Escudo digital simbolizando ciberseguridad y protección de datos"
+                    loading="lazy"
+            />
+        </a>
+        <div class="card-body">
+            <h2 class="card-title"><a href="entrada3.html">Ética y futuro de la IA: riesgos, sesgos y regulación</a></h2>
+            <p class="card-excerpt">
+                Cómo asegurar un desarrollo responsable: transparencia, explicabilidad y marcos regulatorios.
+            </p>
+            <div class="card-meta">
+                <span class="badge">Ética</span>
+                <time datetime="2025-11-07">7 nov 2025</time>
+            </div>
+        </div>
+    </article>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>© <span id="year"></span> Big Data & IA — Blog académico</p>
+        <p class="footer-note">HTML • CSS • JavaScript</p>
+    </div>
+</footer>
+
+<button id="theme-toggle" class="ui-btn" aria-pressed="false" aria-label="Cambiar tema">Modo claro</button>
+<button id="scroll-top" class="ui-btn-round" aria-label="Volver arriba">↑</button>
+
+
+<script src="script.js"></script>
 </body>
 </html>
