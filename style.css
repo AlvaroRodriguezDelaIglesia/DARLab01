@@ -436,4 +436,66 @@ ul {
         width: 90%;
     }
 }
+/* ===== PARCHE: tamaño de imágenes en entradas ===== */
+/* Fuerza reducción aunque haya inline style="width:100%" */
+.entrada img {
+    width: 55% !important;          /* antes 100% en inline */
+    max-width: 640px !important;
+    min-width: 320px;
+    margin: 2rem auto !important;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+.entrada img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 28px rgba(0,170,255,.25);
+}
+@media (max-width: 900px){
+    .entrada img { width: 70% !important; }
+}
+@media (max-width: 600px){
+    .entrada img { width: 92% !important; }
+}
+
+/* ===== PARCHE: contraste en modo claro (sobrescribe inline) ===== */
+body[data-theme="light"] .entrada p,
+body[data-theme="light"] .entrada li,
+body[data-theme="light"] .entrada h1,
+body[data-theme="light"] .entrada h2,
+body[data-theme="light"] .entrada h3 {
+    color: #121212 !important;   /* texto principal mucho más oscuro */
+}
+
+/* Citas en modo claro: texto y fondo legibles, ignora inline */
+body[data-theme="light"] .entrada blockquote {
+    color: #2f2f2f !important;
+    border-left: 4px solid #007acc !important;
+    background: #eef4fb !important;
+    padding: 1rem 1.2rem !important;
+    border-radius: 8px !important;
+}
+
+/* En modo oscuro hacemos la cita elegante, también sobre inline */
+body[data-theme="dark"] .entrada blockquote {
+    color: #cfe7ff !important;
+    border-left: 4px solid #00aaff !important;
+    background: rgba(0,170,255,.06) !important;
+    padding: 1rem 1.2rem !important;
+    border-radius: 8px !important;
+}
+
+/* En tarjetas/listas de portada, si quieres imágenes un poco menos altas: */
+.card-media img { height: 180px; }      /* antes 200px */
+@media (max-width: 700px){ .card-media img { height: 160px; } }
+
+/* Afinado de cuerpo de texto para lectura en modo claro */
+body[data-theme="light"] .hero p,
+body[data-theme="light"] .card-excerpt { color: #3a3a3a !important; }
+
+/* Acentos más sobrios en modo claro (links/títulos dentro de tarjetas) */
+body[data-theme="light"] .card-title,
+body[data-theme="light"] .card-title a,
+body[data-theme="light"] .logo { color: #005fa3 !important; }
 
