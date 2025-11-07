@@ -1,3 +1,8 @@
+/* ==========================================
+   ESTILO GENERAL - BLOG BIG DATA & IA
+   ========================================== */
+
+/* -------- Reset básico -------- */
 * {
     margin: 0;
     padding: 0;
@@ -16,14 +21,14 @@ body {
     transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-
+/* -------- Contenedores -------- */
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-
+/* -------- Cabecera -------- */
 .main-header {
     background: #10131a;
     border-bottom: 1px solid #1e232e;
@@ -70,7 +75,7 @@ body {
     color: #fff;
 }
 
-
+/* -------- Hero -------- */
 .hero {
     text-align: center;
     padding: 4rem 1rem 3rem;
@@ -93,7 +98,7 @@ body {
     margin-inline: auto;
 }
 
-
+/* -------- Buscador y tags -------- */
 .search-wrap {
     margin-top: 2rem;
 }
@@ -135,7 +140,7 @@ body {
     color: #fff;
 }
 
-
+/* -------- Cards -------- */
 .posts {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
@@ -196,7 +201,7 @@ body {
     font-size: 0.8rem;
 }
 
-
+/* -------- Footer -------- */
 .site-footer {
     background-color: #10131a;
     color: #9fa6b2;
@@ -206,7 +211,7 @@ body {
     border-top: 1px solid #1e232e;
 }
 
-
+/* -------- Botones flotantes -------- */
 .ui-btn,
 .ui-btn-round {
     position: fixed;
@@ -249,7 +254,7 @@ body {
     display: flex;
 }
 
-
+/* -------- Animaciones -------- */
 .reveal {
     opacity: 0;
     transform: translateY(20px);
@@ -261,39 +266,67 @@ body {
     transform: translateY(0);
 }
 
-
+/* -------- MODO CLARO -------- */
 body[data-theme="light"] {
-    background-color: #f7f9fc;
-    color: #222;
+    background-color: #f8fafc;
+    color: #1e1e1e;
 }
 
 body[data-theme="light"] .main-header,
 body[data-theme="light"] .site-footer {
-    background-color: #e9eef5;
-    color: #333;
+    background-color: #ffffff;
+    color: #2d3748;
+    border-color: #ddd;
 }
 
 body[data-theme="light"] .logo {
-    color: #0077cc;
+    color: #007acc;
+}
+
+body[data-theme="light"] .nav-links a {
+    color: #333;
+}
+
+body[data-theme="light"] .nav-links a:hover,
+body[data-theme="light"] .nav-links a.active {
+    background-color: #007acc;
+    color: #fff;
 }
 
 body[data-theme="light"] .card {
     background-color: #fff;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+    color: #222;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+body[data-theme="light"] .card-title {
+    color: #007acc;
+}
+
+body[data-theme="light"] .card-excerpt {
+    color: #444;
 }
 
 body[data-theme="light"] .tag {
-    background-color: #fff;
+    background-color: #f2f4f7;
     border-color: #ddd;
     color: #333;
 }
 
 body[data-theme="light"] .tag.active {
-    background-color: #0077cc;
+    background-color: #007acc;
+    color: #fff;
+}
+
+/* Ajuste para modo claro de botones */
+body[data-theme="light"] .ui-btn,
+body[data-theme="light"] .ui-btn-round {
+    background-color: #007acc;
     color: #fff;
 }
 
 
+/* -------- Responsivo -------- */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 1.6rem;
@@ -302,4 +335,49 @@ body[data-theme="light"] .tag.active {
     .nav-links {
         justify-content: center;
     }
+}
+
+
+/* -------- Ajustes elegantes de distribución -------- */
+.entrada p {
+    max-width: 750px;
+    margin: 1rem auto;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: inherit;
+}
+
+.entrada img {
+    display: block;
+    width: 70%;
+    margin: 1.5rem auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.entrada h2 {
+    text-align: center;
+    margin-top: 2.5rem;
+    color: #00aaff;
+    font-size: 1.4rem;
+}
+
+blockquote {
+    max-width: 700px;
+    margin: 1.5rem auto;
+    font-style: italic;
+    line-height: 1.7;
+    color: #cfd5e0;
+}
+
+body[data-theme="light"] blockquote {
+    color: #555;
+    border-left-color: #007acc;
+}
+
+ul {
+    max-width: 700px;
+    margin: 0 auto;
+    padding-left: 1.5rem;
+    line-height: 1.7;
 }
