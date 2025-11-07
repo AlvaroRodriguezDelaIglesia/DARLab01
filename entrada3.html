@@ -1,10 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Ética y futuro de la IA | Blog Big Data & IA</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
+<header class="main-header">
+    <div class="container header-inner">
+        <a href="index.html" class="logo">Big Data & IA</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="entrada1.html">Big Data</a></li>
+                <li><a href="entrada2.html">Inteligencia Artificial</a></li>
+                <li><a href="entrada3.html" class="active">Ética y Futuro</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+<main class="container">
+    <article class="entrada">
+        <h1 style="color:#00aaff; margin-top:2rem;">Ética y futuro de la Inteligencia Artificial</h1>
+        <img
+                src="https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&w=1400&q=80"
+                alt="Escudo digital representando protección de datos y ética tecnológica"
+                style="width:100%; border-radius:10px; margin:1.5rem 0;"
+        />
+
+        <p>
+            A medida que la Inteligencia Artificial gana poder e influencia, surgen cuestiones críticas sobre su impacto en la sociedad.
+            La <strong>ética de la IA</strong> busca garantizar que las tecnologías se desarrollen y utilicen de forma responsable,
+            equitativa y transparente.
+        </p>
+
+        <p>
+            Los principales dilemas éticos incluyen la <em>privacidad</em> de los datos personales,
+            el <em>sesgo algorítmico</em>, la <em>responsabilidad</em> en la toma de decisiones automatizadas
+            y el potencial impacto en el empleo humano.
+        </p>
+
+        <h2 style="color:#00aaff; margin-top:2rem;">Principios clave de una IA responsable</h2>
+        <ul style="margin-left:1.5rem; margin-bottom:1rem;">
+            <li><strong>Transparencia:</strong> los usuarios deben entender cómo y por qué una IA toma decisiones.</li>
+            <li><strong>Explicabilidad:</strong> los modelos deben ser interpretables por humanos.</li>
+            <li><strong>Sostenibilidad:</strong> la IA debe contribuir al bienestar global, no solo al beneficio económico.</li>
+            <li><strong>Privacidad:</strong> proteger los datos personales es una prioridad ética y legal.</li>
+        </ul>
+
+        <blockquote style="border-left:4px solid #00aaff; padding-left:1rem; margin:1.5rem 0; font-style:italic; color:#cfd5e0;">
+            “La cuestión no es si las máquinas pueden pensar, sino si pueden hacer que los humanos lo hagan.” — Alan Turing
+        </blockquote>
+
+        <p>
+            El futuro de la IA dependerá de nuestra capacidad para equilibrar innovación y valores humanos.
+            Un desarrollo ético permitirá aprovechar todo su potencial sin poner en riesgo la justicia, la equidad ni la privacidad.
+        </p>
+
+        <h2 style="color:#00aaff; margin-top:2rem;">Reflexiona sobre el futuro</h2>
+        <p>
+            Haz clic en el botón siguiente para generar una reflexión ética aleatoria:
+        </p>
+
+        <div style="text-align:center; margin:2rem 0;">
+            <button id="reflex-btn" style="background:#00aaff; color:#fff; border:none; border-radius:8px; padding:0.8rem 1.2rem; font-size:1rem; cursor:pointer; transition:0.3s;">
+                 Mostrar reflexión
+            </button>
+            <p id="reflex-output" style="margin-top:1.5rem; font-style:italic; color:#cfd5e0;"></p>
+        </div>
+    </article>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>© <span id="year"></span> Big Data & IA — Blog</p>
+        <p class="footer-note">Álvaro Rodríguez De la Iglesia</p>
+    </div>
+</footer>
+
+
+<button id="theme-toggle" class="ui-btn">Modo claro</button>
+<button id="scroll-top" class="ui-btn-round">↑</button>
+
+
+<script src="script.js"></script>
+<script>
+
+    const reflexiones = [
+        "El mayor riesgo de la IA no es que se vuelva malvada, sino que haga exactamente lo que le pedimos.",
+        "La ética digital no es opcional: es la base de una sociedad conectada y justa.",
+        "Los algoritmos no tienen valores, pero quienes los diseñan sí.",
+        "La inteligencia artificial no tiene conciencia, pero puede amplificar la nuestra.",
+        "Una IA responsable es aquella que protege la dignidad humana, no solo los datos."
+    ];
+
+    const reflexBtn = document.getElementById("reflex-btn");
+    const reflexOut = document.getElementById("reflex-output");
+
+    reflexBtn.addEventListener("click", () => {
+        const frase = reflexiones[Math.floor(Math.random() * reflexiones.length)];
+        reflexOut.textContent = `"${frase}"`;
+        reflexOut.style.opacity = 0;
+        reflexOut.style.transition = "opacity 0.6s ease";
+        setTimeout(() => (reflexOut.style.opacity = 1), 50);
+    });
+</script>
 </body>
 </html>
