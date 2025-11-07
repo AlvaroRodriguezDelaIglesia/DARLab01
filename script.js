@@ -1,13 +1,13 @@
 const themeToggle = document.getElementById("theme-toggle");
 const currentTheme = localStorage.getItem("theme") || "dark";
 document.body.dataset.theme = currentTheme;
-themeToggle.textContent = currentTheme === "dark" ? "☀️ Modo claro" : "🌙 Modo oscuro";
+themeToggle.textContent = currentTheme === "dark" ? "Modo claro" : "Modo oscuro";
 
 themeToggle.addEventListener("click", () => {
     const newTheme = document.body.dataset.theme === "dark" ? "light" : "dark";
     document.body.dataset.theme = newTheme;
     localStorage.setItem("theme", newTheme);
-    themeToggle.textContent = newTheme === "dark" ? "☀️ Modo claro" : "🌙 Modo oscuro";
+    themeToggle.textContent = newTheme === "dark" ? "Modo claro" : "Modo oscuro";
 });
 
 document.getElementById("year").textContent = new Date().getFullYear();

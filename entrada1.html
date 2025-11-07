@@ -1,10 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>El poder del Big Data en la sociedad moderna | Blog Big Data & IA</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
+<header class="main-header">
+    <div class="container header-inner">
+        <a href="index.html" class="logo">Big Data & IA</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="entrada1.html" class="active">Big Data</a></li>
+                <li><a href="entrada2.html">Inteligencia Artificial</a></li>
+                <li><a href="entrada3.html">Ética y Futuro</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <article class="entrada">
+        <h1 style="color:#00aaff; margin-top:2rem;">El poder del Big Data en la sociedad moderna</h1>
+        <img
+                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=80"
+                alt="Visualización de datos en pantallas digitales"
+                style="width:100%; border-radius:10px; margin:1.5rem 0;"
+        />
+
+        <p>
+            En la era digital, los datos se han convertido en uno de los recursos más valiosos. El término <strong>Big Data</strong> hace referencia
+            al procesamiento de grandes volúmenes de información que, correctamente analizados, permiten descubrir patrones,
+            tendencias y relaciones significativas entre los distintos fenómenos del mundo moderno.
+        </p>
+
+        <p>
+            Gracias al Big Data, hoy las empresas y gobiernos pueden tomar decisiones informadas, anticiparse a problemas y
+            ofrecer servicios más personalizados. Desde el análisis de tráfico en ciudades inteligentes hasta el diagnóstico médico
+            asistido por algoritmos, los datos masivos están detrás de gran parte de los avances actuales.
+        </p>
+
+        <p>
+            Pero el verdadero reto no está solo en recopilar datos, sino en <em>convertirlos en conocimiento útil</em>.
+            Esto requiere herramientas de almacenamiento escalables, modelos analíticos potentes y, sobre todo, una visión ética
+            del uso de la información.
+        </p>
+
+        <blockquote style="border-left:4px solid #00aaff; padding-left:1rem; margin:1.5rem 0; font-style:italic; color:#cfd5e0;">
+            “Sin datos, eres solo otra persona con una opinión.” — W. Edwards Deming
+        </blockquote>
+
+        <p>
+            Los analistas coinciden en que el Big Data será clave para abordar los grandes desafíos del siglo XXI,
+            desde la sostenibilidad hasta la prevención de pandemias. Las organizaciones que aprendan a aprovecharlo de forma responsable
+            tendrán una ventaja competitiva indiscutible.
+        </p>
+
+        <h2 style="margin-top:2rem; color:#00aaff;">Visualizando el crecimiento de los datos</h2>
+        <p>
+            A continuación se muestra una pequeña animación que representa de forma simbólica el crecimiento del volumen de datos globales.
+        </p>
+
+        <div id="data-counter" style="font-size:2rem; color:#00aaff; font-weight:800; text-align:center; margin:2rem 0;">0 TB</div>
+
+        <p>
+            Este crecimiento exponencial refleja cómo cada interacción digital —una búsqueda, una compra, un vídeo visto—
+            contribuye a un universo de información en expansión.
+        </p>
+    </article>
+</main>
+
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>© <span id="year"></span> Big Data & IA — Blog académico</p>
+        <p class="footer-note">HTML • CSS • JavaScript</p>
+    </div>
+</footer>
+
+
+<button id="theme-toggle" class="ui-btn">Modo claro</button>
+<button id="scroll-top" class="ui-btn-round">↑</button>
+
+
+<script src="script.js"></script>
+<script>
+
+    const counter = document.getElementById("data-counter");
+    let value = 0;
+    const target = 25000; // TB simbólicos
+    const duration = 2500;
+    const increment = target / (duration / 16);
+
+    function updateCounter() {
+        value += increment;
+        if (value < target) {
+            counter.textContent = Math.floor(value).toLocaleString() + " TB";
+            requestAnimationFrame(updateCounter);
+        } else {
+            counter.textContent = target.toLocaleString() + " TB";
+        }
+    }
+
+    window.addEventListener("load", () => setTimeout(updateCounter, 500));
+</script>
 </body>
 </html>
