@@ -318,25 +318,58 @@ body[data-theme="light"] .tag.active {
     color: #fff;
 }
 
-/* Ajuste para modo claro de botones */
 body[data-theme="light"] .ui-btn,
 body[data-theme="light"] .ui-btn-round {
     background-color: #007acc;
     color: #fff;
 }
 
-
-/* -------- Responsivo -------- */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 1.6rem;
-    }
-
-    .nav-links {
-        justify-content: center;
-    }
+/* -------- Corrección de contraste en modo claro -------- */
+body[data-theme="light"] p,
+body[data-theme="light"] li,
+body[data-theme="light"] h1,
+body[data-theme="light"] h2,
+body[data-theme="light"] h3 {
+    color: #1a1a1a;
 }
 
+body[data-theme="light"] .hero h1 {
+    color: #0a0a0a;
+}
+
+body[data-theme="light"] .card-title a,
+body[data-theme="light"] .logo {
+    color: #005fa3;
+}
+
+body[data-theme="light"] blockquote {
+    color: #333;
+    border-left: 4px solid #007acc;
+    background: #f3f6fa;
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+body[data-theme="light"] .hero p {
+    color: #444;
+}
+
+/* -------- Elegancia modo oscuro -------- */
+body[data-theme="dark"] h1,
+body[data-theme="dark"] h2 {
+    color: #00aaff;
+}
+
+body[data-theme="dark"] p,
+body[data-theme="dark"] li {
+    color: #dbe3ec;
+}
+
+body[data-theme="dark"] blockquote {
+    background: rgba(0, 170, 255, 0.05);
+    border-left: 4px solid #00aaff;
+    color: #cfe7ff;
+}
 
 /* -------- Ajustes elegantes de distribución -------- */
 .entrada p {
@@ -349,10 +382,17 @@ body[data-theme="light"] .ui-btn-round {
 
 .entrada img {
     display: block;
-    width: 70%;
-    margin: 1.5rem auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    width: 55%;
+    max-width: 600px;
+    margin: 2rem auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.entrada img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 28px rgba(0, 170, 255, 0.25);
 }
 
 .entrada h2 {
@@ -381,3 +421,19 @@ ul {
     padding-left: 1.5rem;
     line-height: 1.7;
 }
+
+/* -------- Responsivo -------- */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .nav-links {
+        justify-content: center;
+    }
+
+    .entrada img {
+        width: 90%;
+    }
+}
+
