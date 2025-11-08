@@ -149,6 +149,6 @@ window.addEventListener('DOMContentLoaded', () => {
     initDataFlow();
     initNeuralNetwork();
     initDataCounter();
-    initNeuralInteractions();
     initReflexiones();
+    initNeuralInteractions();
 });
