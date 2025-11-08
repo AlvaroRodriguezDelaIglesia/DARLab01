@@ -555,3 +555,33 @@ body[data-theme="dark"] .entrada blockquote {
     content: "";
 }
 
+/* ===== Forzar centrado de citas y listas en las entradas ===== */
+
+/* Blockquote centrado (sobrescribe inline) */
+.entrada blockquote {
+    max-width: 700px !important;
+    margin: 2rem auto !important;       /* centra el bloque */
+    text-align: center !important;       /* centra el texto */
+    padding: 1rem 1.5rem !important;
+    border-left-width: 4px !important;   /* mantiene el acento */
+    border-radius: 10px !important;
+}
+
+/* Listas centradas (ul/ol) */
+.entrada ul,
+.entrada ol {
+    max-width: 700px !important;
+    margin: 1rem auto !important;        /* centra el bloque de la lista */
+    padding-left: 0 !important;          /* sin sangría lateral */
+    text-align: center !important;       /* centra el contenido */
+    list-style-position: inside !important; /* viñetas alineadas con el texto centrado */
+}
+
+/* Ítems de lista: espacio y altura */
+.entrada li {
+    display: list-item !important;
+    margin: 0.35rem 0 !important;
+    line-height: 1.7 !important;
+}
+
+
