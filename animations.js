@@ -1,8 +1,3 @@
-/* =====================================================
-   Animaciones visuales del blog Big Data & IA
-   ===================================================== */
-
-// === 1. Flujo de datos (entrada1.html) ===
 function initDataFlow() {
     const canvas = document.getElementById('dataFlow');
     if (!canvas) return; // solo si está en la página
@@ -31,7 +26,6 @@ function initDataFlow() {
     animate();
 }
 
-// === 2. Red neuronal animada (entrada2.html) ===
 function initNeuralNetwork() {
     const c = document.getElementById('neuralCanvas');
     if (!c) return;
@@ -150,7 +144,6 @@ function initReflexiones() {
     });
 }
 
-// === 3. Inicializar según la página ===
 window.addEventListener('DOMContentLoaded', () => {
     initDataFlow();
     initNeuralNetwork();
