@@ -68,12 +68,15 @@ function initNeuralNetwork() {
 }
 function initDataCounter() {
     const counter = document.getElementById("data-counter");
+    if (!counter) return;
     let value = 0;
     const target = 25000;
     const duration = 10000;
     const increment = target / (duration / 16);
 
     function updateCounter() {
+        if (!counter || !document.body.contains(counter)) return;
+
         value += increment;
         if (value < target) {
             counter.textContent = Math.floor(value).toLocaleString() + " TB";
