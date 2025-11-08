@@ -125,26 +125,5 @@
 
 <script src="animations.js"></script>
 <script src="script.js"></script>
-<script>
-
-    const reflexiones = [
-        "El mayor riesgo de la IA no es que se vuelva malvada, sino que haga exactamente lo que le pedimos.",
-        "La ética digital no es opcional: es la base de una sociedad conectada y justa.",
-        "Los algoritmos no tienen valores, pero quienes los diseñan sí.",
-        "La inteligencia artificial no tiene conciencia, pero puede amplificar la nuestra.",
-        "Una IA responsable es aquella que protege la dignidad humana, no solo los datos."
-    ];
-
-    const reflexBtn = document.getElementById("reflex-btn");
-    const reflexOut = document.getElementById("reflex-output");
-
-    reflexBtn.addEventListener("click", () => {
-        const frase = reflexiones[Math.floor(Math.random() * reflexiones.length)];
-        reflexOut.textContent = `"${frase}"`;
-        reflexOut.style.opacity = 0;
-        reflexOut.style.transition = "opacity 0.6s ease";
-        setTimeout(() => (reflexOut.style.opacity = 1), 50);
-    });
-</script>
 </body>
 </html>

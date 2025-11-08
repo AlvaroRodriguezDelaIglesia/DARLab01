@@ -123,41 +123,5 @@
 
 <script src="animations.js"></script>
 <script src="script.js"></script>
-<script>
-
-    const fadeEls = document.querySelectorAll(".fade-element");
-    const fadeObs = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.style.opacity = 1;
-        });
-    }, { threshold: 0.3 });
-
-    fadeEls.forEach(el => {
-        el.style.opacity = 0;
-        el.style.transition = "opacity 1s ease";
-        fadeObs.observe(el);
-    });
-
-
-    const network = document.getElementById("network");
-    for (let i = 0; i < 15; i++) {
-        const neuron = document.createElement("div");
-        neuron.style.width = "40px";
-        neuron.style.height = "40px";
-        neuron.style.borderRadius = "50%";
-        neuron.style.background = "#181c25";
-        neuron.style.border = "2px solid #00aaff";
-        neuron.style.transition = "transform 0.3s ease, background 0.3s ease";
-        neuron.addEventListener("click", () => {
-            neuron.style.background = "#00aaff";
-            neuron.style.transform = "scale(1.3)";
-            setTimeout(() => {
-                neuron.style.transform = "scale(1)";
-                neuron.style.background = "#181c25";
-            }, 600);
-        });
-        network.appendChild(neuron);
-    }
-</script>
 </body>
 </html>

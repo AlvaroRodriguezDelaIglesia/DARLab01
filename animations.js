@@ -72,9 +72,89 @@ function initNeuralNetwork() {
     }
     drawNetwork();
 }
+function initDataCounter() {
+    const counter = document.getElementById("data-counter");
+    let value = 0;
+    const target = 25000;
+    const duration = 10000;
+    const increment = target / (duration / 16);
+
+    function updateCounter() {
+        value += increment;
+        if (value < target) {
+            counter.textContent = Math.floor(value).toLocaleString() + " TB";
+            requestAnimationFrame(updateCounter);
+        } else {
+            counter.textContent = target.toLocaleString() + " TB";
+        }
+    }
+
+    setTimeout(updateCounter, 500);
+}
+
+function initNeuralInteractions() {
+    const fadeEls = document.querySelectorAll(".fade-element");
+    const fadeObs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.style.opacity = 1;
+        });
+    }, { threshold: 0.3 });
+
+    fadeEls.forEach(el => {
+        el.style.opacity = 0;
+        el.style.transition = "opacity 1s ease";
+        fadeObs.observe(el);
+    });
+
+
+    const network = document.getElementById("network");
+    for (let i = 0; i < 15; i++) {
+        const neuron = document.createElement("div");
+        neuron.style.width = "40px";
+        neuron.style.height = "40px";
+        neuron.style.borderRadius = "50%";
+        neuron.style.background = "#181c25";
+        neuron.style.border = "2px solid #00aaff";
+        neuron.style.transition = "transform 0.3s ease, background 0.3s ease";
+        neuron.addEventListener("click", () => {
+            neuron.style.background = "#00aaff";
+            neuron.style.transform = "scale(1.3)";
+            setTimeout(() => {
+                neuron.style.transform = "scale(1)";
+                neuron.style.background = "#181c25";
+            }, 600);
+        });
+        network.appendChild(neuron);
+    }
+
+}
+
+function initReflexiones() {
+    const reflexiones = [
+        "El mayor riesgo de la IA no es que se vuelva malvada, sino que haga exactamente lo que le pedimos.",
+        "La ética digital no es opcional: es la base de una sociedad conectada y justa.",
+        "Los algoritmos no tienen valores, pero quienes los diseñan sí.",
+        "La inteligencia artificial no tiene conciencia, pero puede amplificar la nuestra.",
+        "Una IA responsable es aquella que protege la dignidad humana, no solo los datos."
+    ];
+
+    const reflexBtn = document.getElementById("reflex-btn");
+    const reflexOut = document.getElementById("reflex-output");
+
+    reflexBtn.addEventListener("click", () => {
+        const frase = reflexiones[Math.floor(Math.random() * reflexiones.length)];
+        reflexOut.textContent = `"${frase}"`;
+        reflexOut.style.opacity = 0;
+        reflexOut.style.transition = "opacity 0.6s ease";
+        setTimeout(() => (reflexOut.style.opacity = 1), 50);
+    });
+}
 
 // === 3. Inicializar según la página ===
 window.addEventListener('DOMContentLoaded', () => {
     initDataFlow();
     initNeuralNetwork();
+    initDataCounter();
+    initNeuralInteractions();
+    initReflexiones();
 });

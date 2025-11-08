@@ -123,25 +123,5 @@
 
 <script src="animations.js"></script>
 <script src="script.js"></script>
-<script>
-
-    const counter = document.getElementById("data-counter");
-    let value = 0;
-    const target = 25000;
-    const duration = 10000;
-    const increment = target / (duration / 16);
-
-    function updateCounter() {
-        value += increment;
-        if (value < target) {
-            counter.textContent = Math.floor(value).toLocaleString() + " TB";
-            requestAnimationFrame(updateCounter);
-        } else {
-            counter.textContent = target.toLocaleString() + " TB";
-        }
-    }
-
-    window.addEventListener("load", () => setTimeout(updateCounter, 500));
-</script>
 </body>
 </html>
