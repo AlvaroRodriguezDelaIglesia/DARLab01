@@ -91,20 +91,25 @@ function initDataCounter() {
 
 function initNeuralInteractions() {
     const fadeEls = document.querySelectorAll(".fade-element");
-    const fadeObs = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.style.opacity = 1;
-        });
-    }, { threshold: 0.3 });
+    if (fadeEls.length > 0) {
+        const fadeObs = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.style.opacity = 1;
+            });
+        }, {threshold: 0.3});
 
-    fadeEls.forEach(el => {
-        el.style.opacity = 0;
-        el.style.transition = "opacity 1s ease";
-        fadeObs.observe(el);
-    });
+        fadeEls.forEach(el => {
+            el.style.opacity = 0;
+            el.style.transition = "opacity 1s ease";
+            fadeObs.observe(el);
+        });
+    }
 
 
     const network = document.getElementById("network");
+    if (!network || !(network instanceof HTMLElement)) {
+        return;
+    }
     for (let i = 0; i < 15; i++) {
         const neuron = document.createElement("div");
         neuron.style.width = "40px";
