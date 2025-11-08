@@ -124,6 +124,9 @@ function initNeuralInteractions() {
 }
 
 function initReflexiones() {
+    const reflexBtn = document.getElementById("reflex-btn");
+    const reflexOut = document.getElementById("reflex-output");
+
     const reflexiones = [
         "El mayor riesgo de la IA no es que se vuelva malvada, sino que haga exactamente lo que le pedimos.",
         "La ética digital no es opcional: es la base de una sociedad conectada y justa.",
@@ -132,9 +135,7 @@ function initReflexiones() {
         "Una IA responsable es aquella que protege la dignidad humana, no solo los datos."
     ];
 
-    const reflexBtn = document.getElementById("reflex-btn");
-    const reflexOut = document.getElementById("reflex-output");
-
+    if (!reflexBtn || !reflexOut) return;
     reflexBtn.addEventListener("click", () => {
         const frase = reflexiones[Math.floor(Math.random() * reflexiones.length)];
         reflexOut.textContent = `"${frase}"`;
